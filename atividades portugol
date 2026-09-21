@@ -257,4 +257,92 @@ programa {
   }
 }
 
+programa {
+  funcao inicio() {
+    real a 
+    real b
+    cadeia operador
+
+    escreva("Insira um numero: ")
+    leia (a)
+
+    escreva("Operador: ")
+    leia(operador)
+
+    escreva("Insira um numero: ")
+    leia (b)
+
+    se(operador == "*")
+    escreva(a * b)
+
+    se(operador == "+")
+    escreva(a + b)
+
+    se(operador == "-")
+    escreva(a - b)
+
+    se(operador == "/")
+    escreva(a/b)
+    senao
+    escreva ("divisao por 0")
+    
+    }
+
+}
+
+programa {
+  funcao inicio() {
+    real a, b, c
+
+    escreva("classificação de triangulo: isosceles, equilatero e escaleno\n")
+
+    escreva("insira a medida do lado a: ")
+    leia(a)
+    escreva("insira a medida do lado b: ")
+    leia(b)
+    escreva("insira a medida do lado c: ")
+    leia(c)
+
+    se (a == b e b == c) {
+      escreva("triangulo equilatero\n")
+    } senao se (a == b ou b == c ou a == c) {
+      escreva("triangulo isosceles\n")
+    } senao {
+      escreva("triangulo escaleno\n")
+    }
+  }
+}
+
+programa {
+  funcao inicio() {
+    real a, b
+    cadeia operador
+
+    escreva("calculadora aritmetica \n")
+
+    escreva("insira um numero: ")
+    leia(a)
+    escreva("insira um operador (+,-,*,/): ")
+    leia(operador)
+    escreva("insira um numero: ")
+    leia(b)
+
+    se (operador == "+") {
+      escreva("resultado: ", a + b, "\n")
+    } senao se (operador == "-") {
+      escreva("resultado: ", a - b, "\n")
+    } senao se (operador == "*") {
+      escreva("resultado: ", a * b, "\n")
+    } senao se (operador == "/") {
+      se (b != 0) {
+        escreva("resultado: ", a / b, "\n")
+      } senao {
+        escreva("invalido!\n")
+      }
+    } senao {
+      escreva("operador inválido\n")
+    }
+  }
+}
+
 
