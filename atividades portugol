@@ -391,4 +391,327 @@ programa {
      escreva("Erro")
    }
 
+programa {
+  funcao inicio() {
+    escreva("boletim de notas")
 
+    cadeia nome
+    cadeia curso
+    cadeia semestre
+    cadeia disciplina 
+    inteiro nota
+
+    escreva("\nNome: ")
+    leia(nome)
+
+    escreva("\nCurso: ")
+    leia(curso)
+
+    escreva("\nSemestre: ")
+    leia(semestre)
+
+    escreva("\nDisciplina: ")
+    leia(disciplina)
+
+    escreva("\nNota Obtida: ")
+    leia(nota)
+
+    se (nota >= 60 e nota <= 100)
+    {
+     escreva("Aprovado!")
+    }
+    
+    senao se (nota <20)
+    {
+     escreva ("Reprovado!")
+    }
+    senao
+    {
+     escreva("Recuperação!")
+    }
+  }
+}
+
+programa {
+  funcao inicio() {
+    cadeia cadastro, login
+    logico senhaCorreta
+
+    escreva("cadastro e validacao de senha\n")
+
+    escreva("cadastre sua senha: ")
+    leia(cadastro)
+
+    escreva("digite sua senha: ")
+    leia(login)
+
+    senhaCorreta = falso
+
+    se (login == cadastro) {
+      senhaCorreta = verdadeiro
+    }
+
+    se (senhaCorreta) {
+      escreva("acesso permitido\n")
+    } senao {
+      escreva("acesso negado\n")
+    }
+  }
+}
+
+programa {
+  funcao inicio() {
+    inteiro idade
+    cadeia resposta
+    logico habilitado
+
+    escreva("Quem pode dirigir\n")
+
+    escreva("digite sua idade: ")
+    leia(idade)
+
+    escreva("esta habilitado? (sim/nao): ")
+    leia(resposta)
+
+    habilitado = (resposta == "sim")
+
+    se (idade >= 18 e habilitado) {
+      escreva("pode dirigir\n")
+    } senao {
+      escreva("nao pode dirigir\n")
+    }
+  }
+}
+
+programa {
+  funcao inicio() {
+    real valor, desconto, valorComDesconto
+    cadeia resposta
+    logico aVista
+
+    escreva("tem desconto?\n")
+
+    escreva("digite o valor do produto: ")
+    leia(valor)
+
+    escreva("pagamento é a vista? (sim/nao): ")
+    leia(resposta)
+
+    aVista = (resposta == "sim")
+
+    desconto = valor * 0.1
+    valorComDesconto = valor - desconto
+
+    se (aVista) {
+      escreva("valor com desconto ", valorComDesconto, "\n")
+    } senao {
+      escreva("valor sem desconto ", valor, "\n")
+    }
+  }
+}
+
+programa {
+  funcao inicio() {
+    inteiro numero
+
+    escreva("par ou impar\n")
+
+    escreva("digite um numero: ")
+    leia(numero)
+
+    se (numero % 2 == 0) {
+      escreva("o numero ", numero, " é par\n")
+    } senao {
+      escreva("o numero ", numero, " é impar\n")
+    }
+  }
+}
+
+programa {
+  funcao inicio() {
+    real numero
+
+    escreva("positivo, negativo ou zero\n")
+
+    escreva("digite um numero: ")
+    leia(numero)
+
+    se (numero > 0) {
+      escreva("o numero é positivo\n")
+    } senao se (numero < 0) {
+      escreva("o numero é negativo\n")
+    } senao {
+      escreva("o numero é zero\n")
+    }
+  }
+}
+
+programa {
+  funcao inicio() {
+    real a, b, c, maior
+
+    escreva("maior entre 3 numeros\n")
+
+    escreva("digite o primeiro numero: ")
+    leia(a)
+    escreva("digite o segundo numero: ")
+    leia(b)
+    escreva("digite o terceiro numero: ")
+    leia(c)
+
+    maior = a
+
+    se (b > maior) {
+      maior = b
+    }
+
+    se (c > maior) {
+      maior = c
+    }
+
+    escreva("o maior numero é ", maior, "\n")
+  }
+}
+
+
+programa {
+  inclua biblioteca Texto --> t
+
+  funcao inicio() {
+    inteiro idade
+    cadeia resposta
+    logico autorizacao
+
+    escreva("=== pratica de esportes entre 12 e 18 anos ===\n")
+
+    escreva("qual sua idade? ")
+    leia(idade)
+
+    escreva("tem autorizacao dos pais? (sim/nao): ")
+    leia(resposta)
+
+    autorizacao = (t.caixa_alta(resposta) == "SIM")
+
+    se (idade >= 12 e idade <= 18 e autorizacao) {
+      escreva("pode praticar\n")
+    } senao {
+      escreva("nao pode praticar\n")
+    }
+  }
+}
+
+programa {
+  const cadeia CHAVE_ACESSO_CORRETA = "12345"
+
+  funcao inicio() {
+    cadeia chaveDigitada
+    real salario, percentual, aumento, novoSalario
+
+    escreva("=== Calculador de Aumento ===\n")
+
+    escreva("Insira a chave de acesso para autorizar o aumento: ")
+    leia(chaveDigitada)
+
+    se (chaveDigitada == CHAVE_ACESSO_CORRETA) {
+      escreva("Chave de acesso correta. Prosseguindo com o cálculo do aumento.\n")
+
+      escreva("Insira seu salario: ")
+      leia(salario)
+
+      escreva("Qual o percentual do aumento? ")
+      leia(percentual)
+
+      aumento = (percentual * salario) / 100
+      novoSalario = salario + aumento
+
+      escreva("O aumento é de: ", aumento, "\n")
+      escreva("O novo salário é: ", novoSalario, "\n")
+    } senao {
+      escreva("Acesso negado. Chave de acesso incorreta.\n")
+    }
+  }
+}
+
+programa {
+  funcao inicio() {
+    inteiro valor
+
+    escreva("insira um valor: ")
+    leia(valor)
+
+    se (valor >= 1 e valor <= 50) {
+      escreva("dentro do intervalo\n")
+    } senao {
+      escreva("fora do intervalo\n")
+    }
+  }
+}
+
+programa {
+  funcao inicio() {
+    inteiro opcao
+
+    escreva("====OPÇÕES/ESCOLHA FORMA DE PAGAMENTO====\n")
+    escreva("1 - Dinheiro\n")
+    escreva("2 - Cartão\n")
+    escreva("3 - Cartão\n")
+    escreva("4 - PIX\n")
+    escreva("5 - Boleto\n")
+
+    escreva("Escolha uma opção: ")
+    leia(opcao)
+
+    escreva("Opção escolhida: ", escolhaPagamento(opcao), "\n")
+  }
+
+  funcao cadeia escolhaPagamento(inteiro opcao) {
+    cadeia resultado
+
+    se (opcao == 1) {
+      resultado = "Dinheiro"
+    } senao se (opcao == 2) {
+      resultado = "Cartão"
+    } senao se (opcao == 3) {
+      resultado = "Cartão"
+    } senao se (opcao == 4) {
+      resultado = "PIX"
+    } senao se (opcao == 5) {
+      resultado = "Boleto"
+    } senao {
+      resultado = "Opção inválida"
+    }
+
+    retorne resultado
+  }
+}
+
+ programa {
+  funcao inicio() {
+    real valorCompra, valorFinal
+
+    escreva("desconto progressivo: compra\n")
+
+    escreva("insira o valor da compra: R$ ")
+    leia(valorCompra)
+
+    valorFinal = calculaDesconto(valorCompra)
+
+    escreva("valor final: R$ ", valorFinal, "\n")
+
+    se (valorFinal == valorCompra) {
+      escreva("Nao tem desconto!\n")
+    }
+  }
+
+  funcao real calculaDesconto(real valorCompra) {
+    se (valorCompra >= 100 e valorCompra < 300) {
+      retorne valorCompra * 0.90
+    } senao se (valorCompra >= 300 e valorCompra < 500) {
+      retorne valorCompra * 0.85
+    } senao se (valorCompra >= 500) {
+      retorne valorCompra * 0.80
+    }
+
+    retorne valorCompra
+  }
+}
