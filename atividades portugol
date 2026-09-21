@@ -1,0 +1,242 @@
+programa {
+  funcao inicio() {
+    real a, b, adicao
+
+    escreva("adicao\n")
+
+    escreva("numero: ")
+    leia(a)
+    escreva("numero: ")
+    leia(b)
+
+    adicao = a + b
+
+    escreva("adicao ", adicao, "\n")
+  }
+}
+
+programa {
+  funcao inicio() {
+    real a, b, subtracao
+
+    escreva("subtracao\n")
+
+    escreva("numero: ")
+    leia(a)
+    escreva("numero: ")
+    leia(b)
+
+    subtracao = a - b
+
+    escreva("subtracao ", subtracao, "\n")
+  }
+}
+
+programa {
+  funcao inicio() {
+    real a, b, divisao
+
+    escreva("divisao\n")
+
+    escreva("numero: ")
+    leia(a)
+    escreva("numero: ")
+    leia(b)
+
+    se (b != 0) {
+      divisao = a / b
+      escreva("divisao ", divisao, "\n")
+    } senao {
+      escreva("nao existe divisao por zero!\n")
+    }
+  }
+}
+
+programa {
+  funcao inicio() {
+    real a, b, multiplicacao
+
+    escreva("multiplicacao\n")
+
+    escreva("numero: ")
+    leia(a)
+    escreva("numero: ")
+    leia(b)
+
+    multiplicacao = a * b
+
+    escreva("multiplicacao ", multiplicacao, "\n")
+  }
+}
+
+programa {
+  funcao inicio() {
+    real a, dobro
+
+    escreva("dobro\n")
+
+    escreva("numero: ")
+    leia(a)
+
+    dobro = a * 2
+
+    escreva("dobro ", dobro, "\n")
+  }
+}
+
+programa {
+  funcao inicio() {
+    real a, triplo
+
+    escreva("triplo\n")
+
+    escreva("numero: ")
+    leia(a)
+
+    triplo = a * 3
+
+    escreva("triplo ", triplo, "\n")
+  }
+}
+
+programa {
+  funcao inicio() {
+    real a, antecessor
+
+    escreva("antecessor\n")
+
+    escreva("numero: ")
+    leia(a)
+
+    antecessor = a - 1
+
+    escreva("antecessor ", antecessor, "\n")
+  }
+}
+
+programa {
+  funcao inicio() {
+    real a, sucessor
+
+    escreva("sucessor\n")
+
+    escreva("numero: ")
+    leia(a)
+
+    sucessor = a + 1
+
+    escreva("sucessor ", sucessor, "\n")
+  }
+}
+
+programa {
+  funcao inicio() {
+    real altura, comprimento, perimetro
+
+    escreva("perimetro do retangulo!\n")
+
+    escreva("altura: ")
+    leia(altura)
+    escreva("comprimento: ")
+    leia(comprimento)
+
+    perimetro = 2 * (altura + comprimento)
+
+    escreva("perimetro do retangulo ", perimetro, "\n")
+  }
+}
+
+programa {
+  funcao inicio() {
+    real altura, base, area
+
+    escreva("area do triangulo\n")
+
+    escreva("altura: ")
+    leia(altura)
+    escreva("base: ")
+    leia(base)
+
+    area = (base * altura) / 2
+
+    escreva("area do triangulo ", area, "\n")
+  }
+}
+
+programa {
+  inclua biblioteca Texto --> t
+
+  funcao inicio() {
+    inteiro idade
+    cadeia resposta
+    logico temIngresso, entrada
+
+    escreva("idade: ")
+    leia(idade)
+
+    escreva("possui ingresso (sim/nao): ")
+    leia(resposta)
+
+    temIngresso = (t.caixa_alta(resposta) == "SIM")
+    entrada = falso
+
+    se (idade >= 18 e temIngresso) {
+      entrada = verdadeiro
+    }
+
+    se (entrada) {
+      escreva("pode entrar\n")
+    } senao {
+      escreva("nao pode entrar\n")
+    }
+  }
+}
+
+programa {
+  funcao inicio() {
+    inteiro idade
+
+    escreva("classificação de idade: criança, adolescente, adulto, idoso\n")
+
+    escreva("insira sua idade: ")
+    leia(idade)
+
+    se (idade >= 0 e idade < 12) {
+      escreva("voce é criança\n")
+    } senao se (idade >= 12 e idade < 18) {
+      escreva("voce é adolescente\n")
+    } senao se (idade >= 18 e idade < 60) {
+      escreva("voce é adulto\n")
+    } senao se (idade >= 60) {
+      escreva("voce é idoso\n")
+    } senao {
+      escreva("idade invalida\n")
+    }
+  }
+}
+
+programa {
+  funcao inicio() {
+    inteiro idade
+    cadeia resposta
+    logico registrado
+
+    escreva("Quem pode votar\n")
+
+    escreva("digite sua idade: ")
+    leia(idade)
+
+    escreva("esta registrado? (sim/nao): ")
+    leia(resposta)
+
+    registrado = (resposta == "sim")
+
+    se (idade >= 16 e registrado) {
+      escreva("pode votar\n")
+    } senao {
+      escreva("nao pode votar\n")
+    }
+  }
+}
+
+
